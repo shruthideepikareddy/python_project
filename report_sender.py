@@ -17,7 +17,7 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SENDER_EMAIL = "shruthideepikav@gmail.com"
-SENDER_PASSWORD = "cqja kzvy lfqt wwcv"  # Use app password for better security
+SENDER_PASSWORD = "app_password here"  # Use app password for better security
 RECIPIENT_EMAIL = "shruthideepikav@gmail.com"
 
 def generate_excel_report():
@@ -85,4 +85,5 @@ if __name__ == "__main__":
         os.remove(report_file)
         print("Report process completed successfully")
     except Exception as e:
+
         print(f"Error generating/sending report: {str(e)}")
