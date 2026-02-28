@@ -1,0 +1,29 @@
+# Secrets — NEVER commit these
+.env
+
+# Pickle files (binary, large)
+EncodeFile.p
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Generated reports
+*.xlsx
+*.csv
+
+# IDE
+.vscode/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db

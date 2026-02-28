@@ -8,17 +8,20 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 from datetime import datetime
-SUPABASE_URL = "https://hlhzjdzqfwrmoultblat.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhsaHpqZHpxZndybW91bHRibGF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0MDgxNjMsImV4cCI6MjA1Nzk4NDE2M30.xWHJh_llH7MNf-g0Dic9EXvXjzSBMSGuYc0VX0uuAEM"
+from dotenv import load_dotenv
 
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+# Load environment variables
+load_dotenv()
+
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 # Email Configuration
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SENDER_EMAIL = "shruthideepikav@gmail.com"
-SENDER_PASSWORD = "app_password here"  # Use app password for better security
-RECIPIENT_EMAIL = "shruthideepikav@gmail.com"
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+SENDER_PASSWORD = os.getenv("SENDER_PASSWORD")
+RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL")
 
 def generate_excel_report():
     # Fetch attendance data

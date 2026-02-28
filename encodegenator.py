@@ -2,12 +2,14 @@ import cv2
 import face_recognition
 import pickle
 import os
-import requests
+from dotenv import load_dotenv
 
-# Supabase credentials (replace with your actual values)
-SUPABASE_URL = "https://hlhzjdzqfwrmoultblat.supabase.co"
-SUPABASE_SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhsaHpqZHpxZndybW91bHRibGF0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI0MDgxNjMsImV4cCI6MjA1Nzk4NDE2M30.xWHJh_llH7MNf-g0Dic9EXvXjzSBMSGuYc0VX0uuAEM"  # Use your service_role key
-  # Ensure this matches your bucket name
+# Load environment variables
+load_dotenv()
+
+# Supabase credentials
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_KEY")
 
 # Importing student images
 folderPath = 'photos'
